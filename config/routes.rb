@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :admin, controllers: {
+  devise_for :admin, only:[:sessions], controllers:{
     sessions: "admin/sessions"
   }
   
-  devise_for :user, controllers: {
+  devise_for :user, only:[:registrations, :sessions], controllers:{
     registrations: "public/registrations",
     sessions: "public/sessions"
   }
