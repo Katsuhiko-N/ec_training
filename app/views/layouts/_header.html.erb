@@ -1,0 +1,13 @@
+<table class="header container-fluid">
+    <tbody>
+        <tr class="row-fluid">
+            <td class="col-4"><%= link_to "トップページ", root_path %></td>
+            <% if user_signed_in? %>
+                <td class="col-4"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></td>
+            <% else %>
+                <td class="col-4"><%= link_to "ログイン", new_user_session_path %></td>
+            <% end %>
+            <td class="col-4"><%= link_to "新規登録", new_user_registration_path %></td>
+        </tr>
+    </tbody>
+</table >
