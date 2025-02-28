@@ -4,8 +4,8 @@ class Public::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
   
-  def after_sign_up_path_for
-    redirect_to test_path
+  def after_sign_up_path_for(resource)
+    test_path
   end
   
 
@@ -43,7 +43,7 @@ class Public::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  protected
+  private
 
   # If you have extra params to permit, append them to the sanitizer.
   
