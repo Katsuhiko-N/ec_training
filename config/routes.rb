@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :items
+  end
+  
+  scope module: :public do
+    resources :items, only:[:index, :show]
+  end
+  
+  
   devise_for :admin, only:[:sessions], controllers:{
     sessions: "admin/sessions"
   }
